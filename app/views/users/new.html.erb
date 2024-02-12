@@ -1,0 +1,20 @@
+<h1>Sign Up</h1>
+
+<%= form_with model: @user, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.label :is_admin %>
+  <%= form.check_box :is_admin %>
+
+  <%= form.label :avatar %>
+  <%= form.text_field :avatar %>
+
+  <%= form.submit "Create my account" %>
+<% end %>

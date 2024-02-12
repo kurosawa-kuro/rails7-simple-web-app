@@ -1,0 +1,13 @@
+<h1>Todos</h1>
+
+<%= link_to 'New Todo', new_todo_path %>
+
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <%= link_to todo.title, todo %> <br>
+      <strong>User:</strong> <%= todo.user.name %><br>
+      <strong>Categories:</strong> <%= todo.categories.map(&:title).join(", ") %>
+    </li>
+  <% end %>
+</ul>
