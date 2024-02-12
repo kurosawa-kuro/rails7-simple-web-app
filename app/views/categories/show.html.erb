@@ -3,4 +3,13 @@
   <%= @category.title %>
 </p>
 
+<h2>Related Todos</h2>
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <%= link_to todo.title, todo_path(todo) %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Back', categories_path %>

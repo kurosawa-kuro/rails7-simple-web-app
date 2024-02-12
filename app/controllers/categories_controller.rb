@@ -1,11 +1,14 @@
 class CategoriesController < ApplicationController
     before_action :set_category, only: [:show]
-  
+
     def index
       @categories = Category.all
     end
-  
+
     def show
+      # 既に@categoryはset_categoryによって設定されています
+      # このカテゴリーに関連するTodoを取得する
+      @todos = @category.todos
     end
   
     def new
@@ -25,7 +28,7 @@ class CategoriesController < ApplicationController
       def set_category
         @category = Category.find(params[:id])
       end
-  
+
       def category_params
         params.require(:category).permit(:title)
       end

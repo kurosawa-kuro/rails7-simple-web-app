@@ -6,8 +6,8 @@
   <% @todos.each do |todo| %>
     <li>
       <%= link_to todo.title, todo %> <br>
-      <strong>User:</strong> <%= todo.user.name %><br>
-      <strong>Categories:</strong> <%= todo.categories.map(&:title).join(", ") %>
+      <strong>User:</strong> <%= link_to todo.user.name, user_path(todo.user) %><br>
+      <strong>Categories:</strong> <%= todo.categories.map { |category| link_to category.title, category_path(category) }.join(", ").html_safe %>
     </li>
   <% end %>
 </ul>

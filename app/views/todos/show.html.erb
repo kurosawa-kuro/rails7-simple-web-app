@@ -3,4 +3,14 @@
   <%= @todo.title %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= link_to @todo.user.name, user_path(@todo.user) %>
+</p>
+
+<p>
+  <strong>Categories:</strong>
+  <%= @todo.categories.map { |category| link_to category.title, category_path(category) }.join(", ").html_safe %>
+</p>
+
 <%= link_to 'Back', todos_path %>
