@@ -23,11 +23,11 @@ default: &default
 
 development:
   <<: *default
-  database: rails7_simple_web_app
+  database: development_db
   pool: 5
-  username: rails7_simple_web_app_user
-  password: I8uA7CWoPZ6Zyjs9N8v2xLFFU8toGnHO
-  host: dpg-cn4penicn0vc738tk5r0-a
+  username: dev_user
+  password: dev_password
+  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
